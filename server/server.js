@@ -11,6 +11,6 @@ server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
 //change the name below to relate to new website
-server.use('/api/v1/Home', styleCheckRoutes)
+server.use('/api/v1/home', styleCheckRoutes)
 
 module.exports = server
