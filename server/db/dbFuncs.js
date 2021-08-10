@@ -20,6 +20,12 @@ const postNewListing = (item, db = connection) => {
         err.message
     })
 }
+const updateSalesItems = (id, item, db = connection) => {
+    console.log(id, item,'These are the db funcs')
+    return db('salesitems')
+    .where('id', id)
+    .update(item)
+}
 const getAllBasket = (db = connection) => {
     return db('basket')
     .select()
@@ -39,9 +45,7 @@ const deletefromBasket = (id, db = connection)=> {
     .where('id', id)
     .delete()
 }
-// const updatefromBasket = (id, item, db = connection) => {
 
-// }
 
 
 
@@ -52,5 +56,6 @@ module.exports = {
    postNewListing,
    AddListingBasket,
    deletefromBasket,
+   updateSalesItems,
 
 }

@@ -44,4 +44,10 @@ router.delete('/basket/:id', (req,res) => {
         }
     )
 })
+router.patch('/:id', (req,res) => {
+    db.updateSalesItems(req.params.id, req.body)
+    .then(item => {
+        res.json(item)
+    })
+})
 module.exports = router
