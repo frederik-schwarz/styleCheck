@@ -1,28 +1,25 @@
-import { getTemplate } from '../apis/changeName'
+import { getAllSalesItems } from '../apis/shopApi'
 
 //!!!!!!!!!!!!!!!!!!!!!!
 //write actions as shown below for new topic and also export as shown below 
 //!!!!!!!!!!!!!!!!!!!!!!
 
 
+export const SET_SALESITEMS = 'SET_SALESITEMS'
 
-// export const SET_FRUITS = 'SET_FRUITS'
+const AllSalesItems = (items) => {
+    return {
+        type: SET_SALESITEMS,
+        items
+    }
+}
 
 
-
-// export function setFruits (fruits) {
-//   return {
-//     type: SET_FRUITS,
-//     fruits
-//   }
-// }
-
-// export function fetchFruits () {
-//   return dispatch => {
-//     return getFruits()
-//       .then(fruits => {
-//         dispatch(setFruits(fruits))
-//         return null
-//       })
-//   }
-// }
+export const setAllSalesItems = () => {
+    return dispatch => {
+        return getAllSalesItems()
+        .then(items => {
+            return dispatch(AllSalesItems(items))
+        })
+    }
+}

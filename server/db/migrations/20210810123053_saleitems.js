@@ -8,6 +8,8 @@ exports.up = function(knex) {
         table.string('condition')
         table.string('Img')
         table.integer('price')
+        table.string('brand')
+        table.string('Gender')
     })
   
 };
