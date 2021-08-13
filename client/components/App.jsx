@@ -9,13 +9,27 @@ import Nav from './Nav'
 
 
 function App (props) {
+
   const [open1, changeOpen1] = useState(0)
   const [open2, changeOpen2] = useState(0)
   const [open3, changeOpen3] = useState(0)
   const [open4, changeOpen4] = useState(0)
   const [open5, changeOpen5] = useState(1)
-  
+  const [open6, changeOpen6] = useState(1)
+  const [open7, changeOpen7] = useState(1)
 
+  const [data, setData] = useState('');
+
+  const childToParent = (childdata) => {
+    console.log(data)
+    changeOpen1(0)
+    changeOpen2(0)
+    changeOpen3(0)
+    changeOpen4(0)
+    changeOpen5(1)
+    changeOpen6(1)
+    changeOpen7(1)
+  }
   
   function handleClick(number) {
     if(number === 1) {
@@ -24,6 +38,8 @@ function App (props) {
       changeOpen3(0)
       changeOpen4(0)
       changeOpen5(0)
+      changeOpen6(0)
+      changeOpen7(0)
     }
     else if(number === 2) {
       changeOpen1(0)
@@ -31,6 +47,8 @@ function App (props) {
       changeOpen3(0)
       changeOpen4(0)
       changeOpen5(0)
+      changeOpen6(0)
+      changeOpen7(0)
     }   
     else if(number === 3) {
       changeOpen1(0)
@@ -38,6 +56,8 @@ function App (props) {
       changeOpen3(1)
       changeOpen4(0)
       changeOpen5(0)
+      changeOpen6(0)
+      changeOpen7(0)
     }
     else if(number === 4) {
       changeOpen1(0)
@@ -45,31 +65,35 @@ function App (props) {
       changeOpen3(0)
       changeOpen4(1)
       changeOpen5(0)
+      changeOpen6(0)
+      changeOpen7(0)
     }
     }
   
 
   return (
     <>
-    <Nav />
+    <Nav childToParent={childToParent}/>
+    {!!open7 &&
     <div className='app'>
       <h1 className='titleHome'>Style Check</h1>
-    </div>
+    </div>}
     <div className='imgContainer'>
-      {open5 && <img className='fashionImgHome' src='https://cdn.shopify.com/s/files/1/0022/5050/6349/files/Frame_2_1200x.png?v=1627911934' alt='fashion line up'>
+      {!!open5 && <img className='fashionImgHome' src='https://cdn.shopify.com/s/files/1/0022/5050/6349/files/Frame_2_1200x.png?v=1627911934' alt='fashion line up'>
       </img>}
       </div>
-      <div className='lowerNavHome'>
+
+      {!!open6 && <div className='lowerNavHome'>
       <p onClick={() => handleClick(1)}>Men</p>
       <p onClick={() => handleClick(2)}>Woman</p>
       <p onClick={() => handleClick(3)}>UniSex</p>
       <p onClick={() => handleClick(4)}>All Items</p>
-      </div>
+      </div>}
    
-      {open4 && <AllItems />}
-      {open2 && <WomansItems/>}
-      {open1 && <MensItems />}
-      {open3 && <UniSexItems />}
+      {!!open4 && <AllItems />}
+      {!!open2 && <WomansItems/>}
+      {!!open1 && <MensItems />}
+      {!!open3 && <UniSexItems />}
       
     </>
   )

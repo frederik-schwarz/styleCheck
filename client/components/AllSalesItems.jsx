@@ -11,9 +11,11 @@ function AllItems (props) {
   
     return (
         <>
-        <ul className='AllitemsUl'>{props.items.map(item => {
+        <ul className='allItemsUl'>{props.items.map(item => {
              return (
-                 <li key={item.id}>{item.item}</li>
+                
+                 <li className='allItemsLi' key={item.id}><img className='allItemsImg' src={item.Img} alt={item.specification}></img><span className='allItemsPrice'>{item.specification}</span> <span className='allItemsPrice'>${item.price}</span></li>
+                
              )
          })}</ul>
         
