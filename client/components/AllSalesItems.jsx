@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
 import { setAllSalesItems } from '../actions.js'
-
+import SingleItmes from './SingleItmes.jsx'
 
 function AllItems (props) {
 
@@ -11,10 +11,16 @@ function AllItems (props) {
   
     return (
         <>
+
         <ul className='allItemsUl'>{props.items.map(item => {
              return (
                 
-                 <li className='allItemsLi' key={item.id}><img className='allItemsImg' src={item.Img} alt={item.specification}></img><span className='allItemsPrice'>{item.specification}</span> <span className='allItemsPrice'>${item.price}</span></li>
+                 <li className='allItemsLi' key={item.id}>
+                     <img className='allItemsImg' src={item.Img} alt={item.specification}></img>
+                     <span className='allItemsPrice'>{item.specification}</span> 
+                     <span className='allItemsPrice'>${item.price}</span>
+                     <SingleItmes thing={item}/>
+                 </li>
                 
              )
          })}</ul>

@@ -12,3 +12,8 @@ export function getAllSalesItems () {
     .get(rootUrl)
     .then(res => res.body)
 }
+export function getItem(id) {
+    return request
+    .get(rootUrl + '/' + id)
+    .then(res => res.json)
+}

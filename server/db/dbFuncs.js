@@ -8,6 +8,14 @@ const getAllItems = (db = connection) => {
         console.log(err.message)
     })
 }
+const getSingleItem = (id, db = connection) => {
+    return db('salesitems')
+    .where('id', id)
+    .select()
+    .catch(err => {
+        console.log(err.message)
+    })
+}
 const deleteLisitng = (id, db = connection)=> {
     return db('salesitems')
     .where('id', id)
@@ -57,5 +65,6 @@ module.exports = {
    AddListingBasket,
    deletefromBasket,
    updateSalesItems,
+   getSingleItem,
 
 }

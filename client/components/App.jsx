@@ -5,10 +5,14 @@ import WomansItems from './Woman'
 import MensItems from './Men'
 import UniSexItems from './UniSex'
 import Nav from './Nav'
+import { Route } from 'react-router-dom'
+import SingleItmes from './SingleItmes'
+
 
 
 
 function App (props) {
+  
 
   const [open1, changeOpen1] = useState(0)
   const [open2, changeOpen2] = useState(0)
@@ -17,6 +21,8 @@ function App (props) {
   const [open5, changeOpen5] = useState(1)
   const [open6, changeOpen6] = useState(1)
   const [open7, changeOpen7] = useState(1)
+  const [open8, changeopen8] = useState(1)
+  console.log(open1, open2, open3, open4, open5, open6, open7, open8)
 
   const [data, setData] = useState('');
 
@@ -73,7 +79,8 @@ function App (props) {
 
   return (
     <>
-    <Nav childToParent={childToParent}/>
+{/* childToParent={childToParent} */}
+    <Route path='/' component={Nav}/>
     {!!open7 &&
     <div className='app'>
       <h1 className='titleHome'>Style Check</h1>
