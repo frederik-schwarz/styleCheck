@@ -1,6 +1,7 @@
 import request from 'superagent'
 
 const rootUrl = '/api/v1/home'
+const serverUrl = '/'
 
 // !!!!!!!!!!!!!!!!!!!!
 //write api functions in this file full stack todo has good examples of this on github kotare
@@ -14,6 +15,6 @@ export function getAllSalesItems () {
 }
 export function getItem(id) {
     return request
-    .get(rootUrl + '/' + id)
+    .get(serverUrl + '/singleItem/:' + id)
     .then(res => res.json)
 }

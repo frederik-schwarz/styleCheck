@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
         res.json(item)
     })
 })
-router.get('/:id', (req, res) => {
+router.get('/singleItem/:id', (req, res) => {
     db.getSingleItem(req.params.id)
     .then(item => {
         res.json(item)

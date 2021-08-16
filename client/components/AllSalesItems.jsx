@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
 import { setAllSalesItems } from '../actions.js'
-import SingleItmes from './SingleItmes.jsx'
+//import SingleItmes from './SingleItmes.jsx'
 
-function AllItems (props) {
-
+function AllItems (props, {dispatch, history}) {
+    console.log(dispatch)      
     useEffect(()=> {
         props.dispatch(setAllSalesItems())
     }, [])
-  
+    
     return (
         <>
 
@@ -19,7 +19,7 @@ function AllItems (props) {
                      <img className='allItemsImg' src={item.Img} alt={item.specification}></img>
                      <span className='allItemsPrice'>{item.specification}</span> 
                      <span className='allItemsPrice'>${item.price}</span>
-                     <SingleItmes thing={item}/>
+                     <button onClick={() => history.push('/singleItem/')}>click me</button>
                  </li>
                 
              )
