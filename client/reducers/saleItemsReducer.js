@@ -1,10 +1,7 @@
-//Write reducers here I think this is part which links to global store
+
+import { ADD_TOBASKET, SET_SALESITEMS, SET_SINGLEITEM } from "../actions.js/shopAction.js"
 
 
-// import { SET_FRUITS } from '../actions'
-import { ADD_TOBASKET, SET_SALESITEMS, SET_SINGLEITEM } from "../actions.js/index.js"
-
-// const initialState = []
 const initialState = []
 
 const reducer = (state = initialState, action) => {

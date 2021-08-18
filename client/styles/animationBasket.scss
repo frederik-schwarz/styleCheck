@@ -1,0 +1,17 @@
+.imgAnimation {
+    opacity: 0;
+    animation-duration: 2s;
+    animation-name: basket;
+    max-width: 2rem;
+    max-height: auto;
+}
+@keyframes basket {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+.imgAnimationContainer {
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
+}
