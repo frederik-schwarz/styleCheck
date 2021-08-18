@@ -3,23 +3,18 @@ import { connect } from 'react-redux'
 import { setAllSalesItems } from '../actions.js'
 //import SingleItmes from './SingleItmes.jsx'
 
-function AllItems (props, {dispatch, history}) {
-    console.log(dispatch)      
-    useEffect(()=> {
-        props.dispatch(setAllSalesItems())
-    }, [])
-    
+function AllItems ({items, history}) {
     return (
         <>
 
-        <ul className='allItemsUl'>{props.items.map(item => {
+        <ul className='allItemsUl'>{items.map(item => {
              return (
                 
                  <li className='allItemsLi' key={item.id}>
                      <img className='allItemsImg' src={item.Img} alt={item.specification}></img>
                      <span className='allItemsPrice'>{item.specification}</span> 
                      <span className='allItemsPrice'>${item.price}</span>
-                     <button onClick={() => history.push('/singleItem/')}>click me</button>
+                     <button onClick={() => history.push('/singleItem/' + item.id)}>click me</button>
                  </li>
                 
              )

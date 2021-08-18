@@ -3,10 +3,6 @@ import { connect } from 'react-redux'
 
 
 
-
-
-
-
 function Nav({dispatch, history}) {
     return (
         <>
