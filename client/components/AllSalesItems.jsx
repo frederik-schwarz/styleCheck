@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
-import { setAllSalesItems } from '../actions.js'
+import { setAllSalesItems } from '../actions.js/shopAction.js'
 //import SingleItmes from './SingleItmes.jsx'
 
-function AllItems ({items, history}) {
+function AllItems ({items, basket, history}) {
+    console.log(basket, 'OQNDBIPJBQEPIDBQEIPDQP')
     return (
         <>
 
@@ -25,7 +26,8 @@ function AllItems ({items, history}) {
 }
 const ms2p = (globalState) => {
     return {
-        items: globalState.saleItemsReducer
+        items: globalState.saleItemsReducer,
+        basket: globalState.basketItems
     }
 }
 export default connect(ms2p)(AllItems)

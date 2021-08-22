@@ -8,6 +8,7 @@ export const ADD_TOBASKET = 'ADD_TOBASKET'
 export const SET_SALESITEMS = 'SET_SALESITEMS'
 export const SET_SINGLEITEM = 'SET_SINGLEITEM'
 
+
 const AllSalesItems = (items) => {
     return {
         type: SET_SALESITEMS,
@@ -28,6 +29,7 @@ const addNewItemToBasket = (item) => {
         item
     }
 }
+
 
 export const setSingleSalesItem = (itemId) => {
     return dispatch => {
@@ -58,3 +60,4 @@ export const addToBasket = (item) => {
         )
     }
 }
+

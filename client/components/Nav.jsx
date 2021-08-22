@@ -9,6 +9,7 @@ function Nav({dispatch, history}) {
         <ul className='navUl'>
             <li className='navLi' onClick={() => history.push('/')}>Home</li>
             <li className='navLi' id='specialChar'>≡</li>
+            <li className='navLi' onClick={() => history.push('/basket/')}>cart(0)</li>
         </ul>
         </>
     )

@@ -1,31 +1,29 @@
 import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
-import { addToBasket } from '../actions.js'
-import AnimationBasket from './AnimationBasket'
+import { addToBasket } from '../actions.js/shopAction.js'
+import AnimationBasket from './AnimationBasket.jsx'
 
 function SingleItems (props) {
   const [currentItem, changeItem] = useState({})
   const [open1, changeOpen1] = useState(0)
   const [open2, changeOpen2] = useState(1)
-  // function handle(item) {
-  //   changeItem(item)
-  //   handleAddtoCart(currentItem)
-  //   console.log(currentItem, 'this is first function')
-  // }
-  // function handleAddtoCart(item) {
-  //   props.dispatch(addToBasket(item))
-  // }
+  const [animation, changeAnimation] = useState(0)
+ 
   function handleChange(item) {
     changeItem({item: item.item, size: item.size, specification: item.specification, condition: item.condition, Img: item.Img, price: item.price, brand: item.brand, Gender: item.Gender})
     changeOpen1(1)
     changeOpen2(0)
-    //props.dispatch(addToBasket(currentItem))
+    
   }
   function handleSubmit(e) {
     e.preventDefault()
     props.dispatch(addToBasket(currentItem))
     changeOpen1(0)
     changeOpen2(1)
+    changeAnimation(1)
+    setTimeout(function(){
+      changeAnimation(0)
+    },3000)
   }
   function handleCancel() {
     changeItem({})
@@ -40,7 +38,7 @@ function SingleItems (props) {
           return(
 
             <>
-            {/* <AnimationBasket/> */}
+              <AnimationBasket handleSubmit={animation}/>
               <div className='singleItemContainer'>
                 <img className='imgSingleItem' src={item.Img}></img>
                 <h2 className='singleItemspec'>{item.specification}</h2>
@@ -57,7 +55,7 @@ function SingleItems (props) {
           )
         }
       })}
-      {/* <button onClick={() => handleClick(props.thing.id)}>this item</button> */}
+     
       </>
     )
 }

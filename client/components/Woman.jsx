@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
-import { setAllSalesItems } from '../actions.js'
+import { setAllSalesItems } from '../actions.js/shopAction.js'
 
 
 function WomansItems (props) {
