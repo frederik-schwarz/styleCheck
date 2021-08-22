@@ -2,9 +2,15 @@ import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
 
 function ShoppingCart({items, history}) {
+    
     return (
-        <>
-        <h1>hello</h1>
+        <> 
+            <ul>{items.map(item => { return (
+                <li>{item.specification}</li>
+            )
+            }) 
+            }
+            </ul>
         </>
     )
 }

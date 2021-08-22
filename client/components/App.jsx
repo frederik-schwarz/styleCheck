@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import {Route} from 'react-router-dom'
 import { setAllSalesItems } from '../actions.js/shopAction.js'
-import { setAllBasket } from '../actions.js/basketAction'
+import { setAllBasket } from '../actions.js/basketAction.js'
 
 import AllItems from './AllSalesItems'
 import WomansItems from './Woman'

@@ -4,7 +4,7 @@ import { getAllBasket } from '../apis/basketApi'
 export const SET_ALLBASKET = 'SET_ALLBASKET'
 
 
-const allBasketItems = () => {
+const allBasketItems = (item) => {
     return {
         type: SET_ALLBASKET,
         item
