@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
 import { setAllSalesItems } from '../actions.js/shopAction.js'
-//import SingleItmes from './SingleItmes.jsx'
+
 
 function AllItems ({items, basket, history}) {
-    console.log(basket, 'OQNDBIPJBQEPIDBQEIPDQP')
     return (
         <>
 

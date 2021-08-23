@@ -1,10 +1,10 @@
-import { getAllSalesItems, getItem, addBasket} from '../apis/shopApi'
+import { getAllSalesItems, getItem,} from '../apis/shopApi'
 
 //!!!!!!!!!!!!!!!!!!!!!!
 //write actions as shown below for new topic and also export as shown below 
 //!!!!!!!!!!!!!!!!!!!!!!
 
-export const ADD_TOBASKET = 'ADD_TOBASKET'
+
 export const SET_SALESITEMS = 'SET_SALESITEMS'
 export const SET_SINGLEITEM = 'SET_SINGLEITEM'
 
@@ -23,12 +23,7 @@ const getSingleItem = (itemId) => {
     }
 }
 
-const addNewItemToBasket = (item) => {
-    return {
-        type: ADD_TOBASKET,
-        item
-    }
-}
+
 
 
 export const setSingleSalesItem = (itemId) => {
@@ -49,15 +44,5 @@ export const setAllSalesItems = () => {
         })
     }
 }
-export const addToBasket = (item) => {
-    console.log(item, 'this reaching the action')
-    return dispatch => {
-      return addBasket(item)
-        .then( item => {
-            console.log(item, 'this is the second part of the action')
-                return dispatch(addNewItemToBasket(item))
-            }
-        )
-    }
-}
+
 

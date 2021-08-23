@@ -10,3 +10,22 @@ export function getAllBasket() {
         return res.body
     })
 }
+export function deleteBasketItem(id) {
+    return request
+    .delete(rootUrl + '/basket/' + id)
+    .then(res => {
+        return res.body
+    })
+}
+export function addBasket(item) {
+    return request
+    .post(rootUrl + '/basket')
+    .send(item)
+    .then(res => {
+        console.log(res, 'this is the api')
+        return res.body
+    })   
+    .catch(err => {
+        console.log(err.message)
+    })
+}

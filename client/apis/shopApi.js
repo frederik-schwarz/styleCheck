@@ -22,15 +22,4 @@ export function getItem(id) {
     .then(res => res.json)
 }
 
-export function addBasket(item) {
-    return request
-    .post(rootUrl + '/basket')
-    .send(item)
-    .then(res => {
-        console.log(res, 'this is the api')
-        return res.body
-    })   
-    .catch(err => {
-        console.log(err.message)
-    })
-}
+

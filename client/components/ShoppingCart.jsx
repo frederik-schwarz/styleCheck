@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from 'react' 
 import { connect } from 'react-redux'
+import DeleteFromBasket from './DeleteFromBasket'
 
 function ShoppingCart({items, history}) {
     
     return (
         <> 
             <ul>{items.map(item => { return (
-                <li>{item.specification}</li>
+                <li key={item.id}>{item.specification}
+                <DeleteFromBasket item={item}/>
+                </li>
             )
             }) 
             }
