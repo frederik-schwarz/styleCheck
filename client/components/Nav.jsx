@@ -1,45 +1,54 @@
 import React, {useState, useEffect} from 'react' 
 import { connect } from 'react-redux'
-import DropDownMenu from './DropDownMenu'
 
 
 
 function Nav({items, history}) {
 
     const [drop, changeDrop] = useState(0)
-    const [check, changeCheck] = useState(0)
-    const [data, changeData] = useState()
+    const [data, changeData] = useState(1)
     
-   function childToParent(info) {
-    changeData(info)
-    console.log(data, 'this will hopefully be 0')
-   } 
-   function handleClick(value) {
-       console.log(value, 'this is the value')
-       changeCheck(check + 1)
-        if(check === 1) {
+    function handleClickBurger() {
+        if(drop === 1) {
             changeDrop(0)
-            changeCheck(0)
-        }
-        else if(check === 0){
+        } else {
             changeDrop(1)
-        } 
-        
-   
+        }
     }
-    
-
     return (
         <>
+       
         <div className='navUlContainer'>
             <ul className='navUl'>
                 <li className='navLi' onClick={() => history.push('/')}>Home</li>
-                <li className='navLi' id='cart' onClick={() => history.push('/basket/')}>cart({items.length})</li>
-                <li className='navLi' onClick={() => handleClick()} id='specialChar'>≡</li>
+                <li className='navLi' id='cart' onClick={() => history.push('/basket/')}>cart ({items.length})</li>
+                <li className='navLi' onClick={() => handleClickBurger()} id='specialChar'>≡</li>
+                
             </ul>
-                <DropDownMenu handleClick={drop} childToParent={childToParent} history={history}/>
+            {!!drop &&<ul className='dropDownMenuUl'>
+                <li className='dropDownMenuLi' onClick={() => {
+                    changeDrop(0);
+                    history.push('/mensItems/')
+                    }}>Men</li>
+
+                <li className='dropDownMenuLi' onClick={() => {
+                    changeDrop(0);
+                    history.push('/womansItem/')
+                    }}>Woman</li>
+
+                <li className='dropDownMenuLi' onClick={() => {
+                    changeDrop(0);
+                    history.push('/uniSexItems/')
+                    }}>Unisex</li>
+
+                <li className='dropDownMenuLi' onClick={() => {
+                    changeDrop(0);
+                    history.push('/allItems/')
+                    }}>All items</li>
+            </ul>}
+
         </div>
-        {data}
+        
         </>
     )
 }

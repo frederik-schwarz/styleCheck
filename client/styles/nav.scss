@@ -27,3 +27,19 @@
     
     margin-right: -10rem;
 }
+
+.dropDownMenuUl{
+    list-style-type: none;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-start: 0.1rem;
+    padding-left: 0px;
+}
+.dropDownMenuLi {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    margin: 0.7rem;
+}
