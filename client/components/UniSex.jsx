@@ -3,18 +3,18 @@ import { connect } from 'react-redux'
 import { setAllSalesItems } from '../actions.js/shopAction.js'
 
 
-function UniSexItems (props) {
-    useEffect(()=> {
-        props.dispatch(setAllSalesItems())
-    }, [])
-  
+function UniSexItems ({items, history}) {
     return (
         <>
-        
-        <ul className='UniSexItemsUl'>{props.items.map(item => {
-             if(item.Gender === 'Unisex'){
+         <ul className='allItemsUl'>{items.map(item => {
+             if(item.Gender === 'unisex'){
              return (
-                 <li key={item.id}>{item.item}</li>
+                <li className='allItemsLi' key={item.id}>
+                    <img className='allItemsImg' src={item.Img} alt={item.specification}></img>
+                    <span className='allItemsPrice'>{item.specification}</span> 
+                    <span className='allItemsPrice'>${item.price}</span>
+                    <button onClick={() => history.push('/singleItem/' + item.id)}>click me</button>
+                </li>
              )
              }
          })}</ul>

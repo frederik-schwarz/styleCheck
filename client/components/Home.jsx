@@ -15,9 +15,9 @@ function Home ({dispatch, history}) {
       </div>
 
       <div className='lowerNavHome'>
-      <p onClick={() => handleClick(1)}>Men</p>
-      <p onClick={() => handleClick(2)}>Woman</p>
-      <p onClick={() => handleClick(3)}>UniSex</p>
+      <p onClick={() => history.push('/mensItems/')}>Men</p>
+      <p onClick={() => history.push('/womansItem/')}>Woman</p>
+      <p onClick={() => history.push('/uniSexItems/')}>UniSex</p>
       <p onClick={() => history.push('/allItems/')}>All Items</p>
       </div>
   
