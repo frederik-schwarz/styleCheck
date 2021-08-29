@@ -34,19 +34,21 @@ function SingleItems (props) {
     return (
             <>
 
-            <ul> {props.item.map(item => {
+            <ul className='singleItemsUl'> {props.item.map(item => {
               if(item.id === parseInt(props.match.params.item)){
               return (
-                <li key={item.id} className='SingleItemsLi'>
-                <img className='SingleItemsImg' src={item.Img} alt={item.specification}></img>
-                <span className='SingleItemsOther'>{item.specification}</span> 
-                <span className='SingleItemOther'></span>
-                <span className='SingleItemOther'>${item.price}</span>
-                <button onClick={() => history.push('/singleItem/' + item.id)}>click me</button>
-                {!!open2 &&<button onClick={() => handleChange(item)}>Add to cart</button>}
+                <li key={item.id} className='singleItemsLi'>
+                <span className='singleItemsSpec'>{item.specification}</span> 
+                <img className='singleItemsImg' src={item.Img} alt={item.specification}></img>
+                <span className='singleItemPrice'>Price: ${item.price}</span>
+                <div className='divFlexSingleItem'>
+                <span className='singleItemSizeName'>Size:</span>
+                <span className='singleItemSize'>{item.size}</span>
+                </div>
+                {!!open2 &&<button className='addToCartButton' onClick={() => handleChange(item)}>Add to cart</button>}
                 {!!open1 &&<div className='tikXContainer'>
-                <button onClick={(event) => handleSubmit(event)}>✓</button>
-                <button onClick={() =>  handleCancel()}>✖</button>
+                <button className='tickButton' onClick={(event) => handleSubmit(event)}>✓</button>
+                <button className='crossButton' onClick={() =>  handleCancel()}>✖</button>
                 </div>}
             </li>
               )
