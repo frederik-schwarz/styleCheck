@@ -32,33 +32,32 @@ function SingleItems (props) {
   }
   
     return (
-      <>
-      {props.item.map(item => {
-        if(item.id === parseInt(props.match.params.item)){
-          return(
-
             <>
-              <AnimationBasket handleSubmit={animation}/>
-              <div className='singleItemContainer'>
-                <img className='imgSingleItem' src={item.Img}></img>
-                <h2 className='singleItemspec'>{item.specification}</h2>
-                <h3 className='SingleItemsize'>Size: {item.size}</h3>
-                <h3  className='singleItembrand'>{item.brand}</h3>
+
+            <ul> {props.item.map(item => {
+              if(item.id === parseInt(props.match.params.item)){
+              return (
+                <li key={item.id} className='SingleItemsLi'>
+                <img className='SingleItemsImg' src={item.Img} alt={item.specification}></img>
+                <span className='SingleItemsOther'>{item.specification}</span> 
+                <span className='SingleItemOther'></span>
+                <span className='SingleItemOther'>${item.price}</span>
+                <button onClick={() => history.push('/singleItem/' + item.id)}>click me</button>
                 {!!open2 &&<button onClick={() => handleChange(item)}>Add to cart</button>}
                 {!!open1 &&<div className='tikXContainer'>
                 <button onClick={(event) => handleSubmit(event)}>✓</button>
                 <button onClick={() =>  handleCancel()}>✖</button>
                 </div>}
-              </div>
+            </li>
+              )
+              }
+            })}
+                
+            </ul>
               
             </>
-          )
-        }
-      })}
-     
-      </>
-    )
-}
+    )}
+
 const ms2p = (globalState) => {
   return {
       item: globalState.saleItemsReducer
