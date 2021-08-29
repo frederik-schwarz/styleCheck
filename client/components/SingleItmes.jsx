@@ -32,33 +32,34 @@ function SingleItems (props) {
   }
   
     return (
-      <>
-      {props.item.map(item => {
-        if(item.id === parseInt(props.match.params.item)){
-          return(
-
             <>
-              <AnimationBasket handleSubmit={animation}/>
-              <div className='singleItemContainer'>
-                <img className='imgSingleItem' src={item.Img}></img>
-                <h2 className='singleItemspec'>{item.specification}</h2>
-                <h3 className='SingleItemsize'>Size: {item.size}</h3>
-                <h3  className='singleItembrand'>{item.brand}</h3>
-                {!!open2 &&<button onClick={() => handleChange(item)}>Add to cart</button>}
+
+            <ul className='singleItemsUl'> {props.item.map(item => {
+              if(item.id === parseInt(props.match.params.item)){
+              return (
+                <li key={item.id} className='singleItemsLi'>
+                <span className='singleItemsSpec'>{item.specification}</span> 
+                <img className='singleItemsImg' src={item.Img} alt={item.specification}></img>
+                <span className='singleItemPrice'>Price: ${item.price}</span>
+                <div className='divFlexSingleItem'>
+                <span className='singleItemSizeName'>Size:</span>
+                <span className='singleItemSize'>{item.size}</span>
+                </div>
+                {!!open2 &&<button className='addToCartButton' onClick={() => handleChange(item)}>Add to cart</button>}
                 {!!open1 &&<div className='tikXContainer'>
-                <button onClick={(event) => handleSubmit(event)}>✓</button>
-                <button onClick={() =>  handleCancel()}>✖</button>
+                <button className='tickButton' onClick={(event) => handleSubmit(event)}>✓</button>
+                <button className='crossButton' onClick={() =>  handleCancel()}>✖</button>
                 </div>}
-              </div>
+            </li>
+              )
+              }
+            })}
+                
+            </ul>
               
             </>
-          )
-        }
-      })}
-     
-      </>
-    )
-}
+    )}
+
 const ms2p = (globalState) => {
   return {
       item: globalState.saleItemsReducer

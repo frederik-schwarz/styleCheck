@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 
 function AnimationBasket({handleSubmit}) {
-    console.log(handleSubmit)
     
     return (
         <>

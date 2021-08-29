@@ -45,11 +45,9 @@ export const deleteFromBasket = (id) => {
     }
 }
 export const addToBasket = (item) => {
-    console.log(item, 'this reaching the action')
     return dispatch => {
        addBasket(item)
         .then( item => {
-            console.log(item, 'this is the second part of the action')
                  dispatch(addNewItemToBasket(item))
         })
         return getAllBasket()

@@ -12,7 +12,6 @@ export function getAllSalesItems () {
     return request
     .get(rootUrl)
     .then(res => {
-        console.log(res.body)
         return res.body
     })
 }

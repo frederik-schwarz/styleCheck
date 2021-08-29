@@ -22,7 +22,6 @@ export function addBasket(item) {
     .post(rootUrl + '/basket')
     .send(item)
     .then(res => {
-        console.log(res, 'this is the api')
         return res.body
     })   
     .catch(err => {
