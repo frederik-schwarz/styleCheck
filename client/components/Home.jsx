@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import { useSpring, animated, config} from 'react-spring'
 
 
 function Home ({dispatch, history}) {
-
+  const anim = useSpring({
+    to: {height: "1.8rem"},
+    from: {height: "0.1rem"},
+    config: {mass:4, tension:200, friction:50},
+  })
     return(
         <>  
     <div className='app'>
@@ -15,10 +20,10 @@ function Home ({dispatch, history}) {
       </div>
 
       <div className='lowerNavHome'>
-      <p onClick={() => history.push('/mensItems/')}>Men</p>
-      <p onClick={() => history.push('/womansItem/')}>Woman</p>
-      <p onClick={() => history.push('/uniSexItems/')}>UniSex</p>
-      <p onClick={() => history.push('/allItems/')}>All Items</p>
+      <animated.p style={anim} onClick={() => history.push('/mensItems/')}>Men</animated.p>
+      <animated.p style={anim} onClick={() => history.push('/womansItem/')}>Woman</animated.p>
+      <animated.p style={anim} onClick={() => history.push('/uniSexItems/')}>UniSex</animated.p>
+      <animated.p style={anim} onClick={() => history.push('/allItems/')}>All Items</animated.p>
       </div>
   
         </>

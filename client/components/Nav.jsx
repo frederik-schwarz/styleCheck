@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react' 
 import { connect } from 'react-redux'
+import { useSpring, animated } from 'react-spring'
 
 
 
@@ -7,6 +8,7 @@ function Nav({items, history}) {
 
     const [drop, changeDrop] = useState(0)
     const [data, changeData] = useState(1)
+    const [flip, set] = useState(false)
     
     function handleClickBurger() {
         if(drop === 1) {
@@ -15,6 +17,12 @@ function Nav({items, history}) {
             changeDrop(1)
         }
     }
+    const anim =  useSpring({
+        to: {opacity: 1},
+        from: {opacity: 0},
+        reset: true,
+        reverse: flip,
+    })
     return (
         <>
        
@@ -25,7 +33,7 @@ function Nav({items, history}) {
                 <li className='navLi' onClick={() => handleClickBurger()} id='specialChar'>≡</li>
                 
             </ul>
-            {!!drop &&<ul className='dropDownMenuUl'>
+            {!!drop &&<animated.ul style={anim} className='dropDownMenuUl'>
                 <li className='dropDownMenuLi' onClick={() => {
                     changeDrop(0);
                     history.push('/mensItems/')
@@ -45,7 +53,7 @@ function Nav({items, history}) {
                     changeDrop(0);
                     history.push('/allItems/')
                     }}>All items</li>
-            </ul>}
+            </animated.ul>}
 
         </div>
         
