@@ -31,9 +31,16 @@
 .allItemsImg {
     height: auto;
     width: 7.5rem;
-    background-color: yellowgreen;
+    
 }
 .allItemsLi span {
     font-family: 'Bebas Neue', cursive;
     font-size: 1.5rem;
+}
+.clickItemButton {
+    background-color: transparent;
+    position: absolute;
+    width: 9.5rem;
+    height: 15rem;
+    border: none;
 }
