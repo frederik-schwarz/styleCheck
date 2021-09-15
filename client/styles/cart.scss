@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+.cartDiv{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.cartDiv h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    margin-block-end: 0rem;
+}
+.cartUl {
+
+width: 100%;
+display: flex;
+flex-direction: column;
+align-self: flex-start;
+align-items: flex-start;
+justify-content: center;
+list-style-type: none;
+margin: 1rem 0rem 0rem 0rem;
+padding: 0rem 0rem 0rem 0rem;
+}
+.cartLi {
+    margin: 1rem;
+    border-radius: 0.5rem;
+    width: 80%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-family: 'Bebas Neue', cursive;
+}
+.deleteButtonBasket {
+    border: none;
+    background-color: transparent;
+    font: 1.2rem;
+    font-family: 'Bebas Neue', cursive;
+
+}

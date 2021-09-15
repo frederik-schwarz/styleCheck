@@ -12,7 +12,7 @@ function DeletePurchase(props) {
     return (
         <div className="deleteButtonContainerBasket">
         <div className="deleteButtonContainerChildBasket">
-        <button className="deleteButtonBasket" onClick={() => handleDeleteClick(props.item.id)}>Delete</button>
+        <button className="deleteButtonBasket" onClick={() => handleDeleteClick(props.item.id)}>🗑️ </button>
         </div>
         </div>
     )
