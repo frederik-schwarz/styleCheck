@@ -13,7 +13,7 @@ function UniSexItems ({items, history}) {
                     <img className='allItemsImg' src={item.Img} alt={item.specification}></img>
                     <span className='allItemsPrice'>{item.specification}</span> 
                     <span className='allItemsPrice'>${item.price}</span>
-                    <button onClick={() => history.push('/singleItem/' + item.id)}>click me</button>
+                    <button className='clickItemButton'onClick={() => history.push('/singleItem/' + item.id)}>click me</button>
                 </li>
              )
              }
