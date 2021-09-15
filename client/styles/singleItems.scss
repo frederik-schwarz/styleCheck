@@ -59,12 +59,12 @@
     color: white;
 }
 .tickButton {
-    border: 1px solid black;
+    border: none;
     background-color: #3AA41E;
     color: white;
     font-size: 1.5rem;
-    border-radius: 5px;
     padding: 0.5rem 2rem 0.5rem 2rem;
+    height: 3rem;
 }
 .tikXContainer {
     display: flex;
@@ -74,10 +74,10 @@
 
 }
 .crossButton {
-    border: 1px solid black;
+    border: none;
     background-color: red;
     color: white;
+    height: 3rem;
     font-size: 1.5rem;
-    border-radius: 5px;
     padding: 0.5rem 1rem 0.5rem 1rem;
 }
