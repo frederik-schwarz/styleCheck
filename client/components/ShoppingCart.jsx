@@ -5,15 +5,18 @@ import DeleteFromBasket from './DeleteFromBasket'
 function ShoppingCart({items, history}) {
     
     return (
+        
         <> 
-            <ul>{items.map(item => { return (
-                <li key={item.id}>{item.specification}
+         <div className='.cartDiv'>
+            <ul className='cartUl'>{items.map(item => { return (
+                <li className='cartLi' key={item.id}>{item.specification}
                 <DeleteFromBasket item={item}/>
                 </li>
             )
             }) 
             }
             </ul>
+            </div>
         </>
     )
 }
