@@ -15,6 +15,12 @@ function Nav({items, history}) {
             changeDrop(1)
         }
     }
+    const anim =  useSpring({
+        to: {opacity: 1},
+        from: {opacity: 0},
+        reset: true,
+        reverse: flip,
+    })
     return (
         <>
        
@@ -29,7 +35,7 @@ function Nav({items, history}) {
                 </div>
                 
             </ul>
-            {!!drop &&<ul className='dropDownMenuUl'>
+            {!!drop &&<animated.ul style={anim} className='dropDownMenuUl'>
                 <li className='dropDownMenuLi' onClick={() => {
                     changeDrop(0);
                     history.push('/mensItems/')
@@ -49,7 +55,7 @@ function Nav({items, history}) {
                     changeDrop(0);
                     history.push('/allItems/')
                     }}>All items</li>
-            </ul>}
+            </animated.ul>}
 
         </div>
         
