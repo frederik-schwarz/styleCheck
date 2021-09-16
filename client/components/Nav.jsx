@@ -3,10 +3,12 @@ import { connect } from 'react-redux'
 
 
 
+
 function Nav({items, history}) {
 
     const [drop, changeDrop] = useState(0)
     const [data, changeData] = useState(1)
+    const [flip, set] = useState(false)
     
     function handleClickBurger() {
         if(drop === 1) {
