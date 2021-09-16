@@ -28,9 +28,13 @@ function Nav({items, history}) {
        
         <div className='navUlContainer'>
             <ul className='navUl'>
+                <div className='navcontainerHome'>
                 <li className='navLi' onClick={() => history.push('/')}>Home</li>
+                </div>
+                <div className='navcontainerRest'>
                 <li className='navLi' id='cart' onClick={() => history.push('/basket/')}>cart ({items.length})</li>
                 <li className='navLi' onClick={() => handleClickBurger()} id='specialChar'>≡</li>
+                </div>
                 
             </ul>
             {!!drop &&<animated.ul style={anim} className='dropDownMenuUl'>

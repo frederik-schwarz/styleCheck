@@ -8,3 +8,25 @@
     padding: 1rem;
     width: 90vw;
 }
+@media only screen and (min-width: 1001px) {
+ 
+    .fashionImgHome {
+      display: none;
+     
+    }
+    .fashionImgHome2 {
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+    }
+    .imgContainer {
+        margin-top: 0px;
+        border-block-start: 0px;
+    }
+
+  }
+  @media only screen and (max-width: 1000px) {
+      .fashionImgHome2 {
+          display: none;
+      }
+  }
