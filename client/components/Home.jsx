@@ -2,9 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useSpring, animated, config} from 'react-spring'
 
+
 function Home ({dispatch, history}) {
+
+
   const anim = useSpring({
     to: {height: "1.8rem"},
+    from: {height: "0.1rem"},
+    config: {mass:4, tension:200, friction:50},
+  })
+  const anim2 = useSpring({
+    to: {height: "2.8rem"},
     from: {height: "0.1rem"},
     config: {mass:4, tension:200, friction:50},
   })
@@ -25,6 +33,12 @@ function Home ({dispatch, history}) {
       <animated.p style={anim} onClick={() => history.push('/womansItem/')}>Woman</animated.p>
       <animated.p style={anim} onClick={() => history.push('/uniSexItems/')}>UniSex</animated.p>
       <animated.p style={anim} onClick={() => history.push('/allItems/')}>All Items</animated.p>
+      </div>
+      <div className='lowerNavHome2'>
+      <animated.p style={anim2} onClick={() => history.push('/mensItems/')}>Men</animated.p>
+      <animated.p style={anim2} onClick={() => history.push('/womansItem/')}>Woman</animated.p>
+      <animated.p style={anim2} onClick={() => history.push('/uniSexItems/')}>UniSex</animated.p>
+      <animated.p style={anim2} onClick={() => history.push('/allItems/')}>All Items</animated.p>
       </div>
   
         </>
