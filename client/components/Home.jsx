@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 
 
 function Home ({dispatch, history}) {
+  const anim = useSpring({
+    to: {height: "1.8rem"},
+    from: {height: "0.1rem"},
+    config: {mass:4, tension:200, friction:50},
+  })
 
     return(
         <>  
