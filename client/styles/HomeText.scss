@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
 .app {
     margin-top: -2rem;
     display: flex;
@@ -33,3 +35,57 @@
     margin: 1rem;
     font-size: 1.8rem;
 }
+@media only screen and (max-width: 1000px) and (min-width: 700px) {
+
+    .lowerNavHome {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        margin: 0 auto;
+        width: 100%;
+        height: 10rem;
+        left: 0;
+        position: absolute;
+    }
+    .lowerNavHome p {
+        margin: 1rem;
+        font-size: 3rem;
+    }
+  }
+  @media only screen and (min-width: 1001px) {
+      .titleHome {
+          margin-bottom: 0px;
+      }
+ 
+    .lowerNavHome {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        margin: 0 auto;
+        width: 100%;
+        height: 10rem;
+        left: 0;
+        position: absolute;
+        top: 90%;
+    }
+    .lowerNavHome p {
+        margin: 1rem;
+        font-size: 3rem;
+    }
+  }
+  @media only screen and (min-width: 500px) {
+    .lowerNavHome {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        margin: 0 auto;
+        width: 100%;
+        height: 10rem;
+        left: 0;
+        position: absolute;
+        top: 90%;
+    }
+  }
