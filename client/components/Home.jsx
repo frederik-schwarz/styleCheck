@@ -17,7 +17,7 @@ function Home ({dispatch, history}) {
     config: {mass:4, tension:200, friction:50},
   })
 
-=======
+
 
     return(
         <>  
