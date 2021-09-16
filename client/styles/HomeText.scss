@@ -35,30 +35,42 @@
     margin: 1rem;
     font-size: 1.8rem;
 }
-@media only screen and (max-width: 1000px) and (min-width: 700px) {
+.lowerNavHome2 {
+    position: absolute;
+    left: 50%;
+    margin-left: -50%;
+    top: 80%;
+    color: black;
+    font-size: 1rem;
+    background-color: transparent;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.lowerNavHome2 p{
+    padding: 0.7rem;
+    background-color: white;
+    font-family: 'Bebas Neue', cursive;
+    border-radius: 5px;
+    margin: 1rem;
+    font-size: 1.8rem;
+}
+@media only screen and (max-width: 1000px) {
+    .lowerNavHome2 {
+        display: none;
+    }
+    .lowerNavHome2 p{
+        display: none;
+    }
+}
 
-    .lowerNavHome {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: transparent;
-        margin: 0 auto;
-        width: 100%;
-        height: 10rem;
-        left: 0;
-        position: absolute;
-    }
-    .lowerNavHome p {
-        margin: 1rem;
-        font-size: 3rem;
-    }
-  }
   @media only screen and (min-width: 1001px) {
       .titleHome {
           margin-bottom: 0px;
       }
  
-    .lowerNavHome {
+    .lowerNavHome2 {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -70,9 +82,15 @@
         position: absolute;
         top: 90%;
     }
-    .lowerNavHome p {
+    .lowerNavHome2 p {
         margin: 1rem;
         font-size: 3rem;
+    }
+    .lowerNavHome {
+        display: none;
+    }
+    .lowerNavHome p {
+        display: none;
     }
   }
   @media only screen and (min-width: 500px) {
