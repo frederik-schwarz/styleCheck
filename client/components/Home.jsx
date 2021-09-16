@@ -21,10 +21,10 @@ function Home ({dispatch, history}) {
       </div>
 
       <div className='lowerNavHome'>
-      <p onClick={() => history.push('/mensItems/')}>Men</p>
-      <p onClick={() => history.push('/womansItem/')}>Woman</p>
-      <p onClick={() => history.push('/uniSexItems/')}>UniSex</p>
-      <p onClick={() => history.push('/allItems/')}>All Items</p>
+      <animated.p style={anim} onClick={() => history.push('/mensItems/')}>Men</animated.p>
+      <animated.p style={anim} onClick={() => history.push('/womansItem/')}>Woman</animated.p>
+      <animated.p style={anim} onClick={() => history.push('/uniSexItems/')}>UniSex</animated.p>
+      <animated.p style={anim} onClick={() => history.push('/allItems/')}>All Items</animated.p>
       </div>
   
         </>
