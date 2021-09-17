@@ -27,7 +27,7 @@ function App ({dispatch}) {
 
   return (
     <>
-{/* childToParent={childToParent} */}
+
     <Route path='/' component={Nav}/>
     <Route exact path='/' component={Home}/>
     <Route exact path='/basket/' component={ShoppingCart}/>
