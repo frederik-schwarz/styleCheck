@@ -4,7 +4,7 @@ module.exports = {
     client: 'sqlite3',
     connection: {
       filename: path.join(__dirname, 'dev.sqlite3'),
-      ssl: true,
+      ssl: false,
     },
     useNullAsDefault: true
   },
@@ -13,7 +13,7 @@ module.exports = {
     client: 'sqlite3',
     connection: {
       filename: ':memory:',
-      ssl: true,
+      ssl: false,
     },
     useNullAsDefault: true
   },
@@ -21,7 +21,7 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: process.env.DATABASE_URL,
-    ssl: true,
+    ssl: false,
     pool: {
       min: 2,
       max: 10
