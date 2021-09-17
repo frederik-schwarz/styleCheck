@@ -8,5 +8,6 @@ server/public/styles.css
 server/public/styles.css.map
 .DS_Store
 .env
+/lib
 
 tags
