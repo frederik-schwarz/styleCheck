@@ -4,7 +4,7 @@
   "main": "server/index.js",
   "license": "MIT",
   "engines": {
-    "node": "14.x"
+    "node": "12.18.2"
   },
   "keywords": [
     "fullstack"
@@ -73,6 +73,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
     "express": "^4.17.1",
     "knex": "^0.21.21",
     "pg": "^8.7.1",
