@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom'
 import { setAllSalesItems } from '../actions.js/shopAction.js'
 import { setAllBasket } from '../actions.js/basketAction.js'
 
+import { Notifications } from 'react-push-notification';
 import AllItems from './AllSalesItems'
 import WomansItems from './Woman'
 import MensItems from './Men'
@@ -28,6 +29,7 @@ function App ({dispatch}) {
   return (
     <>
 {/* childToParent={childToParent} */}
+    <Notifications/>
     <Route path='/' component={Nav}/>
     <Route exact path='/' component={Home}/>
     <Route exact path='/basket/' component={ShoppingCart}/>

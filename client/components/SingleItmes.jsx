@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
 import { addToBasket } from '../actions.js/basketAction.js'
 import AnimationBasket from './AnimationBasket.jsx'
+import addNotification from 'react-push-notification';
 
 function SingleItems (props) {
   const [currentItem, changeItem] = useState({})
@@ -24,6 +25,13 @@ function SingleItems (props) {
     setTimeout(function(){
       changeAnimation(0)
     },3000)
+    addNotification({
+      title: 'Added to cart',
+      subtitle: 'This is a subtitle',
+      message: 'Congratulations',
+      theme: 'red',
+      native: true // when using native, your OS will handle theming.
+  })
   }
   function handleCancel() {
     changeItem({})
