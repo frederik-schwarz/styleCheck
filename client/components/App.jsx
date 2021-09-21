@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom'
 import { setAllSalesItems } from '../actions.js/shopAction.js'
 import { setAllBasket } from '../actions.js/basketAction.js'
 
+
 import AllItems from './AllSalesItems'
 import WomansItems from './Woman'
 import MensItems from './Men'
@@ -27,7 +28,6 @@ function App ({dispatch}) {
 
   return (
     <>
-
     <Route path='/' component={Nav}/>
     <Route exact path='/' component={Home}/>
     <Route exact path='/basket/' component={ShoppingCart}/>

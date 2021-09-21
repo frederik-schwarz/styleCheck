@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
 import { addToBasket } from '../actions.js/basketAction.js'
-import AnimationBasket from './AnimationBasket.jsx'
+
 
 function SingleItems (props) {
   const [currentItem, changeItem] = useState({})

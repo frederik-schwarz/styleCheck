@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { useSpring, animated, config} from 'react-spring'
 
 
+
 function Home ({dispatch, history}) {
 
   const anim = useSpring({
