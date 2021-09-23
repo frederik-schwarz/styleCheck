@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import {Route} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { setAllSalesItems } from '../actions.js/shopAction.js'
 import { setAllBasket } from '../actions.js/basketAction.js'
 
-import { Notifications } from 'react-push-notification';
+import { Notifications } from 'react-push-notification'
 import AllItems from './AllSalesItems'
 import WomansItems from './Woman'
 import MensItems from './Men'
@@ -14,32 +14,26 @@ import SingleItmes from './SingleItmes'
 import Home from './Home.jsx'
 import ShoppingCart from './ShoppingCart.jsx'
 
-
-
-
-function App ({dispatch}) {
-  useEffect(()=> {
+function App ({ dispatch }) {
+  useEffect(() => {
     dispatch(setAllSalesItems())
     dispatch(setAllBasket())
-}, [])    
-
-
- 
+  }, [])
 
   return (
     <>
-{/* childToParent={childToParent} */}
-    <Notifications/>
-    <Route path='/' component={Nav}/>
-    <Route exact path='/' component={Home}/>
-    <Route exact path='/basket/' component={ShoppingCart}/>
-    <Route exact path='/singleItem/:item' component={SingleItmes}/>
-    <Route exact path='/womansItem/' component={WomansItems}/>
-    <Route exact path='/mensItems/' component={MensItems}/>
-    <Route exact path='/uniSexItems/' component={UniSexItems}/>
-    <Route exact path='/allItems/' component={AllItems}/>
-   
-    </> 
+
+      <Notifications/>
+      <Route path='/' component={Nav}/>
+      <Route exact path='/' component={Home}/>
+      <Route exact path='/basket/' component={ShoppingCart}/>
+      <Route exact path='/singleItem/:item' component={SingleItmes}/>
+      <Route exact path='/womansItem/' component={WomansItems}/>
+      <Route exact path='/mensItems/' component={MensItems}/>
+      <Route exact path='/uniSexItems/' component={UniSexItems}/>
+      <Route exact path='/allItems/' component={AllItems}/>
+
+    </>
   )
 }
 
